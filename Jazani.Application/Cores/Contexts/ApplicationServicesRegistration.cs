@@ -12,6 +12,7 @@ namespace Jazani.Application.Cores.Contexts
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
             services.AddTransient<IProcessService, ProcessService>();
+            services.AddTransient<IActivityService, ActivityService>();
 
             return services;
         }

@@ -12,7 +12,7 @@ builder.Services.AddSwaggerGen();
 
 
 // Infrastructure
-builder.Services.addInfrastructureServices(builder.Configuration);
+builder.Services.AddInfrastructureServices(builder.Configuration);
 
 // Application
 builder.Services.AddApplicationServices();

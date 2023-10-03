@@ -12,6 +12,7 @@ namespace Jazani.Infrastructure.Cores.Contexts
         #region "DbSet"
         public DbSet<Process> Processes { get; set; }
 
+        public DbSet<Activity> Activities { get; set; }
         #endregion
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -19,6 +20,7 @@ namespace Jazani.Infrastructure.Cores.Contexts
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.ApplyConfiguration(new ProcessConfiguration());
+            modelBuilder.ApplyConfiguration(new ActivityConfiguration());
         }
     }
 }

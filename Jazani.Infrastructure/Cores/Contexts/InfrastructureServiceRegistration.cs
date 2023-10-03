@@ -8,7 +8,7 @@ namespace Jazani.Infrastructure.Cores.Contexts
 {
     public static class InfrastructureServiceRegistration
     {
-        public static IServiceCollection addInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
             {
@@ -16,6 +16,7 @@ namespace Jazani.Infrastructure.Cores.Contexts
             });
 
             services.AddTransient<IProcessRepository, ProcessRepository>();
+            services.AddTransient<IActivityRepository, ActivityRepository>();
 
             return services;
         }
