@@ -8,6 +8,7 @@ namespace Jazani.Application.Lias.Dtos.Activities.Mappers
         public ActivityMapper()
         {
             CreateMap<Activity, ActivityDto>();
+            CreateMap<Activity, ActivitySimpleDto>();
         }
     }
 }

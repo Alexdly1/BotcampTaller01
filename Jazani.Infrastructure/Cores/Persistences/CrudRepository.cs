@@ -12,17 +12,17 @@ namespace Jazani.Infrastructure.Cores.Persistences
         {
             _dbContext = dbContext;
         }
-        public async Task<IReadOnlyList<T>> FindAllAsync()
+        public virtual async Task<IReadOnlyList<T>> FindAllAsync()
         {
             return await _dbContext.Set<T>().AsNoTracking().ToListAsync();
         }
 
-        public async Task<T?> FindByIdAsync(ID Id)
+        public virtual async Task<T?> FindByIdAsync(ID Id)
         {
             return await _dbContext.Set<T>().FindAsync(Id);
         }
 
-        public async Task<T> SaveAsync(T entity)
+        public virtual async Task<T> SaveAsync(T entity)
         {
             EntityState state = _dbContext.Entry(entity).State;
             _ = state switch
