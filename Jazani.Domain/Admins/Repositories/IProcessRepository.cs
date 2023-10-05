@@ -1,11 +1,10 @@
 ﻿using Jazani.Domain.Admins.Models;
+using Jazani.Domain.Cores.Repositories;
 
 namespace Jazani.Domain.Admins.Repositories
 {
-    public interface IProcessRepository
+    public interface IProcessRepository : ICrudRepository<Process, int>
     {
-        Task<IReadOnlyList<Process>> FindAllAsync();
-        Task<Process?> FindByIdAsync(int Id);
-        Task<Process> SaveAsync(Process process);
+        
     }
 }

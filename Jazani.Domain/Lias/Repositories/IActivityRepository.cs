@@ -1,11 +1,10 @@
-﻿using Jazani.Domain.Lias.Models;
+﻿using Jazani.Domain.Cores.Repositories;
+using Jazani.Domain.Lias.Models;
 
 namespace Jazani.Domain.Lias.Repositories
 {
-    public interface IActivityRepository
+    public interface IActivityRepository : ICrudRepository<Activity, int>
     {
-        Task<IReadOnlyList<Activity>> FindAllAsync();
-        Task<Activity?> FindByIdAsync(int Id);
-        Task<Activity> SaveAsync(Activity activity);
+        
     }
 }

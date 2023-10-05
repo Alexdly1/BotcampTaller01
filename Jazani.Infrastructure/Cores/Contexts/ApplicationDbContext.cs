@@ -1,8 +1,5 @@
-﻿using Jazani.Domain.Admins.Models;
-using Jazani.Domain.Lias.Models;
-using Jazani.Infrastructure.Admins.Configurations;
-using Jazani.Infrastructure.Lias.Configurations;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace Jazani.Infrastructure.Cores.Contexts
 {
@@ -11,18 +8,11 @@ namespace Jazani.Infrastructure.Cores.Contexts
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) 
         { }
 
-        #region "DbSet"
-        public DbSet<Process> Processes { get; set; }
-
-        public DbSet<Activity> Activities { get; set; }
-        #endregion
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.ApplyConfiguration(new ProcessConfiguration());
-            modelBuilder.ApplyConfiguration(new ActivityConfiguration());
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
     }
 }
