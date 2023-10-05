@@ -1,6 +1,6 @@
-﻿using Jazani.Domain.Admins.Models;
+﻿using Jazani.Domain.Lias.Models;
 
-namespace Jazani.Domain.Admins.Repositories
+namespace Jazani.Domain.Lias.Repositories
 {
     public interface IActivityRepository
     {

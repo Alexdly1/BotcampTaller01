@@ -2,6 +2,8 @@
 using Jazani.Application.Admins.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
+using Jazani.Application.Lias.Services.Implementations;
+using Jazani.Application.Lias.Services;
 
 namespace Jazani.Application.Cores.Contexts
 {

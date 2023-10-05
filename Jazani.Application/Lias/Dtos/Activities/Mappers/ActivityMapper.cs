@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using Jazani.Domain.Admins.Models;
+using Jazani.Domain.Lias.Models;
 
-namespace Jazani.Application.Admins.Dtos.Activities.Mappers
+namespace Jazani.Application.Lias.Dtos.Activities.Mappers
 {
     public class ActivityMapper : Profile
     {
-        public ActivityMapper() 
+        public ActivityMapper()
         {
             CreateMap<Activity, ActivityDto>();
         }

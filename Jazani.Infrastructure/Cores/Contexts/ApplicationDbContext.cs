@@ -1,5 +1,7 @@
 ﻿using Jazani.Domain.Admins.Models;
+using Jazani.Domain.Lias.Models;
 using Jazani.Infrastructure.Admins.Configurations;
+using Jazani.Infrastructure.Lias.Configurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace Jazani.Infrastructure.Cores.Contexts

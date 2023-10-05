@@ -1,4 +1,4 @@
-﻿namespace Jazani.Domain.Admins.Models
+﻿namespace Jazani.Domain.Lias.Models
 {
     public class Activity
     {

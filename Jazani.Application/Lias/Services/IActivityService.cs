@@ -1,6 +1,6 @@
-﻿using Jazani.Application.Admins.Dtos.Activities;
+﻿using Jazani.Application.Lias.Dtos.Activities;
 
-namespace Jazani.Application.Admins.Services
+namespace Jazani.Application.Lias.Services
 {
     public interface IActivityService
     {
@@ -13,4 +13,3 @@ namespace Jazani.Application.Admins.Services
     }
 
 }
-    

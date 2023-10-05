@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using Jazani.Domain.Admins.Models;
+using Jazani.Domain.Lias.Models;
 
-namespace Jazani.Application.Admins.Dtos.Activities.Mappers
+namespace Jazani.Application.Lias.Dtos.Activities.Mappers
 {
     public class ActivitySaveMapper : Profile
     {
-        public ActivitySaveMapper() 
+        public ActivitySaveMapper()
         {
             CreateMap<Activity, ActivitySaveDto>().ReverseMap();
         }

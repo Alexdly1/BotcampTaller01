@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Jazani.Application.Admins.Dtos.Activities
+namespace Jazani.Application.Lias.Dtos.Activities
 {
     public class ActivityDto
     {

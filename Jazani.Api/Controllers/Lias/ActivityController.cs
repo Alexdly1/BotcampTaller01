@@ -1,10 +1,10 @@
-﻿using Jazani.Application.Admins.Dtos.Activities;
-using Jazani.Application.Admins.Services;
+﻿using Jazani.Application.Lias.Dtos.Activities;
+using Jazani.Application.Lias.Services;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace Jazani.Api.Controllers.Admins
+namespace Jazani.Api.Controllers.Lias
 {
     [Route("api/[controller]")]
     [ApiController]

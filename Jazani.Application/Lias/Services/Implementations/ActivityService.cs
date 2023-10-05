@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using Jazani.Application.Admins.Dtos.Activities;
-using Jazani.Domain.Admins.Models;
-using Jazani.Domain.Admins.Repositories;
+using Jazani.Application.Lias.Dtos.Activities;
+using Jazani.Domain.Lias.Models;
+using Jazani.Domain.Lias.Repositories;
 
-namespace Jazani.Application.Admins.Services.Implementations
+namespace Jazani.Application.Lias.Services.Implementations
 {
     public class ActivityService : IActivityService
     {

@@ -1,9 +1,9 @@
-﻿using Jazani.Domain.Admins.Models;
+﻿using Jazani.Domain.Lias.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 
-namespace Jazani.Infrastructure.Admins.Configurations
+namespace Jazani.Infrastructure.Lias.Configurations
 {
     public class ActivityConfiguration : IEntityTypeConfiguration<Activity>
     {

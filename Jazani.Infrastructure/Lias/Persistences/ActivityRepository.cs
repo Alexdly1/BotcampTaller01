@@ -1,10 +1,10 @@
-﻿using Jazani.Domain.Admins.Models;
-using Jazani.Domain.Admins.Repositories;
+﻿using Jazani.Domain.Lias.Models;
+using Jazani.Domain.Lias.Repositories;
 using Jazani.Infrastructure.Cores.Contexts;
 using Microsoft.EntityFrameworkCore;
 
 
-namespace Jazani.Infrastructure.Admins.Persistences
+namespace Jazani.Infrastructure.Lias.Persistences
 {
     public class ActivityRepository : IActivityRepository
     {
