@@ -4,7 +4,7 @@ using Jazani.Infrastructure.Cores.Contexts;
 using Jazani.Infrastructure.Cores.Persistences;
 using Microsoft.EntityFrameworkCore;
 
-namespace Jazani.Infrastructure.Ges.Persistences
+namespace Jazani.Infrastructure.Mcs.Persistences
 {
     public class InvestmentRepository : CrudRepository<Investment, int>, IInvestmentRepository
     {
@@ -19,6 +19,9 @@ namespace Jazani.Infrastructure.Ges.Persistences
         {
             return await _dbContext.Set<Investment>()
                 .Include(t => t.Holder)
+                .Include(t => t.Investmentconcept)
+                .Include(t => t.Investmenttype)
+                .Include(t => t.Miningconcession)
                 .AsNoTracking()
                 .ToListAsync();
         }
@@ -27,6 +30,9 @@ namespace Jazani.Infrastructure.Ges.Persistences
         {
             return await _dbContext.Set<Investment>()
                 .Include(t => t.Holder)
+                .Include(t => t.Investmentconcept)
+                .Include(t => t.Investmenttype)
+                .Include(t => t.Miningconcession)
                 .FirstOrDefaultAsync(t => t.Id == Id);
         }
     }

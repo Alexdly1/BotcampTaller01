@@ -1,17 +1,19 @@
-﻿using Jazani.Domain.Socs.Models;
+﻿using Jazani.Domain.Mcs.Models;
 using Jazani.Infrastructure.Cores.Converters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System;
 
-namespace Jazani.Infrastructure.Socs.Configurations
+namespace Jazani.Infrastructure.Mcs.Configurations
 {
-    public class HolderConfiguration : IEntityTypeConfiguration<Holder>
+    public class MiningconcessionConfiguration : IEntityTypeConfiguration<Miningconcession>
     {
-        public void Configure(EntityTypeBuilder<Holder> builder)
+        public void Configure(EntityTypeBuilder<Miningconcession> builder)
         {
-            builder.ToTable("holder", "soc");
+            builder.ToTable("miningconcession", "mc");
             builder.HasKey(t => t.Id);
             builder.Property(t => t.Name).HasColumnName("name");
+            builder.Property(t => t.Description).HasColumnName("description");
             builder.Property(t => t.RegistrationDate)
                 .HasColumnName("registrationdate")
                 .HasConversion(new DataTimeToDateTimeOffset());

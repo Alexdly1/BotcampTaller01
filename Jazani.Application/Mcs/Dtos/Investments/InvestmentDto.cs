@@ -1,4 +1,7 @@
 ﻿using Jazani.Application.Lias.Dtos.Activities;
+using Jazani.Application.Mcs.Dtos.Investmentconcepts;
+using Jazani.Application.Mcs.Dtos.Investmenttypes;
+using Jazani.Application.Mcs.Dtos.Miningconcessions;
 using Jazani.Application.Socs.Dtos.Holders;
 using System;
 using System.Collections.Generic;
@@ -16,5 +19,9 @@ namespace Jazani.Application.Mcs.Dtos.Investments
         public bool State { get; set; }
 
         public HolderSimpleDto Holder { get; set; }
+        public InvestmentconceptDto InvestmentConcept { get; set; }
+        public InvestmenttypeDto InvestmentType { get; set; }
+
+        public MiningconcessionDto Miningconcession { get; set; }
     }
 }

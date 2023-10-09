@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Jazani.Api.Controllers.Socs
 {
     [Route("api/[controller]")]
-    [ApiController]
+    //[ApiController]
     public class HolderController : ControllerBase
     {
         private readonly IHolderService _holderService;

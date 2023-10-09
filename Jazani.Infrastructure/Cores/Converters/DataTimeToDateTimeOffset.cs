@@ -2,7 +2,7 @@
 
 namespace Jazani.Infrastructure.Cores.Converters
 {
-    internal class DataTimeToDateTimeOffset : ValueConverter<DateTime, DateTimeOffset>
+    public class DataTimeToDateTimeOffset : ValueConverter<DateTime, DateTimeOffset>
     {
         public DataTimeToDateTimeOffset() : base
             (
