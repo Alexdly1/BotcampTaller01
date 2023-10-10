@@ -22,6 +22,15 @@ namespace Jazani.Infrastructure.Mcs.Configurations
                 .HasColumnName("registrationdate")
                 .HasConversion(new DataTimeToDateTimeOffset());
             builder.Property(t => t.State).HasColumnName("state");
+            builder.Property(x => x.State).HasColumnName("state").HasDefaultValue(true);
+            builder.Property(x => x.MonthName).HasColumnName("monthname");
+            builder.Property(x => x.MonthId).HasColumnName("monthid");
+            builder.Property(x => x.AccreditationCode).HasColumnName("accreditationcode");
+            builder.Property(x => x.AccountantCode).HasColumnName("accountantcode");
+            builder.Property(x => x.HolderId).HasColumnName("holderid");
+            builder.Property(x => x.DeclaredTypeId).HasColumnName("declaredtypeid");
+            builder.Property(x => x.DocumentId).HasColumnName("documentid");
+            builder.Property(x => x.AmountInvested).HasColumnName("amountinvestd");
 
             builder.HasOne(one => one.Holder).WithMany(many => many.Investments)
                 .HasForeignKey(fk => fk.HolderId);
