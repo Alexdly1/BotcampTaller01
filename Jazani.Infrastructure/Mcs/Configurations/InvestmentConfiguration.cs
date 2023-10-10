@@ -16,6 +16,8 @@ namespace Jazani.Infrastructure.Mcs.Configurations
             builder.Property(t => t.InvestmentconceptId).HasColumnName("investmentconceptid");
             builder.Property(t => t.InvestmenttypeId).HasColumnName("investmenttypeid");
             builder.Property(t => t.MiningconcessionId).HasColumnName("miningconcessionid");
+            builder.Property(t => t.PeriodtypeId).HasColumnName("periodtypeId");
+            builder.Property(t => t.MeasureunitId).HasColumnName("measureunitId");
             builder.Property(t => t.RegistrationDate)
                 .HasColumnName("registrationdate")
                 .HasConversion(new DataTimeToDateTimeOffset());
@@ -29,6 +31,10 @@ namespace Jazani.Infrastructure.Mcs.Configurations
                 .HasForeignKey(one => one.InvestmenttypeId);
             builder.HasOne(one => one.Miningconcession).WithMany(many => many.Investments)
                 .HasForeignKey(one => one.MiningconcessionId);
+            builder.HasOne(one => one.Periodtype).WithMany(many => many.Investments)
+                .HasForeignKey(one => one.PeriodtypeId);
+            builder.HasOne(one => one.Measureunit).WithMany(many => many.Investments)
+                .HasForeignKey(one => one.MeasureunitId);
         }
     }
 }

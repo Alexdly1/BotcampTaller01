@@ -22,6 +22,8 @@ namespace Jazani.Infrastructure.Mcs.Persistences
                 .Include(t => t.Investmentconcept)
                 .Include(t => t.Investmenttype)
                 .Include(t => t.Miningconcession)
+                .Include(t => t.Periodtype)
+                .Include(t => t.Measureunit)
                 .AsNoTracking()
                 .ToListAsync();
         }
@@ -33,6 +35,8 @@ namespace Jazani.Infrastructure.Mcs.Persistences
                 .Include(t => t.Investmentconcept)
                 .Include(t => t.Investmenttype)
                 .Include(t => t.Miningconcession)
+                .Include(t => t.Periodtype)
+                .Include(t => t.Measureunit)
                 .FirstOrDefaultAsync(t => t.Id == Id);
         }
     }

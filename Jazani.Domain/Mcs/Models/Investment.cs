@@ -1,4 +1,5 @@
-﻿using Jazani.Domain.Socs.Models;
+﻿using Jazani.Domain.Ges.Models;
+using Jazani.Domain.Socs.Models;
 using System;
 
 namespace Jazani.Domain.Mcs.Models
@@ -13,10 +14,14 @@ namespace Jazani.Domain.Mcs.Models
         public int InvestmentconceptId { get; set; }
         public int InvestmenttypeId { get; set; }
         public int MiningconcessionId { get; set; }
+        public int MeasureunitId  { get; set; }
+        public int PeriodtypeId { get; set; }
 
         public virtual Holder Holder { get; set; }
         public virtual Investmentconcept Investmentconcept { get; set; }
         public virtual Investmenttype Investmenttype { get; set; }
         public virtual Miningconcession Miningconcession { get; set; }
+        public virtual Measureunit Measureunit { get; set; }
+        public virtual Periodtype Periodtype { get; set; }
     }
 }
