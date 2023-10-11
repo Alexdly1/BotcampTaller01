@@ -1,6 +1,9 @@
 ﻿using Jazani.Application.Mcs.Dtos.Investments;
 using Jazani.Application.Mcs.Services;
 using Microsoft.AspNetCore.Mvc;
+using Jazani.Api.Exceptions;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Jazani.Application.Mcs.Services.Implementations;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -26,16 +29,23 @@ namespace Jazani.Api.Controllers.Mcs
 
         // GET api/<InvesmentController>/5
         [HttpGet("{id}")]
-        public async Task<InvestmentDto> Get(int id)
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(InvestmentDto))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ErrorModel))]
+        public async Task<Results<NotFound, Ok<InvestmentDto>>> Get(int id)
         {
-            return await _invesmentService.FindByIdAsync(id);
+            var response = await _invesmentService.FindByIdAsync(id);
+
+            return TypedResults.Ok(response);
         }
 
         // POST api/<InvesmentController>
         [HttpPost]
-        public async Task<InvestmentDto> Post([FromBody] InvestmentSaveDto saveDto)
+        [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(InvestmentDto))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ErrorResponse))]
+        public async Task<Results<BadRequest, CreatedAtRoute<InvestmentDto>>> Post([FromBody] InvestmentSaveDto saveDto)
         {
-            return await _invesmentService.CreateAsync(saveDto);
+            var response = await _invesmentService.CreateAsync(saveDto);
+            return TypedResults.CreatedAtRoute(response);
         }
 
         // PUT api/<InvesmentController>/5

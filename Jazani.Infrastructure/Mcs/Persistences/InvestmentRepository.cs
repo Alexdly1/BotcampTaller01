@@ -39,5 +39,24 @@ namespace Jazani.Infrastructure.Mcs.Persistences
                 .Include(t => t.Measureunit)
                 .FirstOrDefaultAsync(t => t.Id == Id);
         }
+
+        public async override Task<Investment> SaveAsync(Investment entity)
+        {
+            EntityState state = _dbContext.Entry(entity).State;
+
+            // entity.Investment = await _dbContext.Set<Investment>().FindAsync(entity.InvestmentId);
+            _ = state switch
+            {
+                EntityState.Detached => _dbContext.Set<Investment>().Add(entity),
+                EntityState.Modified => _dbContext.Set<Investment>().Update(entity)
+
+            };
+
+            await _dbContext.SaveChangesAsync();
+
+            //return entity;
+
+            return await FindByIdAsync(entity.Id);
+        }
     }
 }
