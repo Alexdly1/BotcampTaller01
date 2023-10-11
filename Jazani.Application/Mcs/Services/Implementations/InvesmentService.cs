@@ -64,7 +64,7 @@ namespace Jazani.Application.Mcs.Services.Implementations
             return _mapper.Map<IReadOnlyList<InvestmentDto>>(investment);
         }
 
-        public async Task<InvestmentDto?> FindByIdAsync(int id)
+        public async Task<InvestmentDto> FindByIdAsync(int id)
         {
             Investment? investment = await _investmentRepository.FindByIdAsync(id);
 
