@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Jazani.Api.Exceptions;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Jazani.Application.Mcs.Services.Implementations;
+using Jazani.Core.Paginations;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -31,7 +32,7 @@ namespace Jazani.Api.Controllers.Mcs
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(InvestmentDto))]
         [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ErrorModel))]
-        public async Task<Results<NotFound, Ok<InvestmentDto>>> Get(int id)
+        public async Task<Results<NotFound<ErrorModel>, Ok<InvestmentDto>>> Get(int id)
         {
             var response = await _invesmentService.FindByIdAsync(id);
 
@@ -60,6 +61,12 @@ namespace Jazani.Api.Controllers.Mcs
         public async Task<InvestmentDto> Delete(int id)
         {
             return await _invesmentService.DisabledAsync(id);
+        }
+
+        [HttpGet("PaginatedSearch")]
+        public async Task<ResponsePagination<InvestmentDto>> PaginatedSearch([FromQuery] RequestPagination<InvestmentFilterDto> request)
+        {
+            return await _invesmentService.PaginatedSearch(request);
         }
     }
 }
