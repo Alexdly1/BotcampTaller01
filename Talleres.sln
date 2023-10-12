@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jazani.Application", "Jazan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jazani.Core", "Jazani.Core\Jazani.Core.csproj", "{4E5A0AB0-D5F2-4AE1-A96C-241A87F714BA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jazani.UnitTest", "Jazani.UnitTest\Jazani.UnitTest.csproj", "{7CB5FB5B-5C63-44F9-9342-48DDA72E76F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{4E5A0AB0-D5F2-4AE1-A96C-241A87F714BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E5A0AB0-D5F2-4AE1-A96C-241A87F714BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E5A0AB0-D5F2-4AE1-A96C-241A87F714BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CB5FB5B-5C63-44F9-9342-48DDA72E76F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CB5FB5B-5C63-44F9-9342-48DDA72E76F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CB5FB5B-5C63-44F9-9342-48DDA72E76F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CB5FB5B-5C63-44F9-9342-48DDA72E76F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
