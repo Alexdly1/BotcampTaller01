@@ -10,6 +10,10 @@ using Jazani.Core.Securities.Services;
 using Jazani.Core.Securities.Services.Implementations;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -51,6 +55,28 @@ builder.Services.Configure<PasswordHasherOptions>(options =>
 
 // ISecurityService
 builder.Services.AddTransient<ISecurityService, SecurityService>();
+
+//JWT
+string jwtSecretKey = builder.Configuration.GetSection("Security:JwtSecrectKey").Get<string>();
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(options =>
+{
+    byte[] key = Encoding.ASCII.GetBytes(jwtSecretKey);
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        IssuerSigningKey = new SymmetricSecurityKey(key),
+        ValidateLifetime = true,
+        ValidIssuer = "",
+        ValidAudience = "",
+        ValidateIssuer = false,
+        ValidateAudience = false,
+        ValidateIssuerSigningKey = true
+    };
+});
+
 
 // Infrastructure
 builder.Services.AddInfrastructureServices(builder.Configuration);
