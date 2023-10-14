@@ -6,6 +6,10 @@ using Jazani.Api.Filters;
 using Jazani.Api.Middlewares;
 using Serilog;
 using Serilog.Events;
+using Jazani.Core.Securities.Services;
+using Jazani.Core.Securities.Services.Implementations;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,6 +43,14 @@ builder.Services.Configure<RouteOptions>(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// PasswordHasher
+builder.Services.Configure<PasswordHasherOptions>(options =>
+{
+    options.CompatibilityMode = PasswordHasherCompatibilityMode.IdentityV3;
+});
+
+// ISecurityService
+builder.Services.AddTransient<ISecurityService, SecurityService>();
 
 // Infrastructure
 builder.Services.AddInfrastructureServices(builder.Configuration);
